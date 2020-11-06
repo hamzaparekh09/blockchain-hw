@@ -1,0 +1,30 @@
+Node 1:
+
+Public address of the key:   0x0b0003De074Dffa11E04C6e75B58Fe87fB9A045D
+Path of the secret key file: node1\keystore\UTC--2020-11-04T23-47-44.341538100Z--0b0003de074dffa11e04c6e75b58fe87fb9a045d
+
+
+Node 2:
+Public address of the key:   0x667B0F08300a280FcF26CDB13CAA10F7db90D471
+Path of the secret key file: node2\keystore\UTC--2020-11-04T23-49-20.195300700Z--667b0f08300a280fcf26cdb13caa10f7db90d471
+
+
+
+
+INFO [11-04|22:40:05.012] Started P2P networking                   self=enode://0f45f5e2bc171a3b61392a3260ccadac350fa6a029b1566766d005f69f2537d3d7e5c37529b610e083eaf79303de8cf38c841eb04435e070af80277f90fa39d0@127.0.0.1:30310
+
+INFO [11-04|22:40:05.958] Unlocked account                         address=0x0b0003De074Dffa11E04C6e75B58Fe87fB9A045D
+
+
+self=enode://0f45f5e2bc171a3b61392a3260ccadac350fa6a029b1566766d005f69f2537d3d7e5c37529b610e083eaf79303de8cf38c841eb04435e070af80277f90fa39d0@127.0.0.1:30303
+
+
+
+To unlock node 1:
+./geth --datadir node1 --mine --minerthreads 1 --rpc --ipcdisable --allow-insecure-unlock --unlock "0x0b0003De074Dffa11E04C6e75B58Fe87fB9A045D"
+
+
+
+
+To unlock node 2:
+./geth --datadir node2 --port 30304 --bootnodes "enode://0f45f5e2bc171a3b61392a3260ccadac350fa6a029b1566766d005f69f2537d3d7e5c37529b610e083eaf79303de8cf38c841eb04435e070af80277f90fa39d0@127.0.0.1:30310" --ipcdisable --allow-insecure-unlock --unlock "0x667B0F08300a280FcF26CDB13CAA10F7db90D471"
